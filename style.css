@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("img.jpeg") no-repeat center center/ cover fixed;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(251, 19, 251);
+  font-size: 35px;
+  font-weight: 800;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+h1:hover {
+  transform: scale(1.02);
+  transition: all 0.5s ease-in-out;
+}
+.accordion {
+  background-color: white;
+  width: 70%;
+  margin: auto;
+  padding: 18px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 5px 10px rgb(139, 107, 139);
+}
+
+.acc-ans {
+  margin: 18px;
+  padding-left: 8px;
+  line-height: 1.5;
+  cursor: pointer;
+  height: 0;
+  overflow: hidden;
+}
+
+.acc-ans.active {
+  height: auto;
+  padding: 10px;
+}
+.acc-qtn {
+  background-color: rgb(231, 219, 233);
+  padding: 8px 10px 8px 8px;
+  color: rgb(135, 7, 155);
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 8px;
+  margin: 18px;
+  font-weight: bold;
+}
+.acc-qtn:hover {
+  scale: 1.01;
+  transition: all 0.5s ease-in-out;
+}
+.acc-qtn::after {
+  content: "+";
+  float: right;
+  padding-right: 18px;
+  font-weight: bold;
+}
+
+.acc-qtn.active::after {
+  content: "-";
+  float: right;
+  padding-right: 23px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 535px) {
+  .container {
+    top: 25%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h1:hover {
+    transform: scale(1);
+    transition: none;
+  }
+  .accordion {
+    font-size: 18px;
+    width: 80%;
+    margin: auto;
+  }
+  /* .acc-qtn::after {
+    padding-right: 8px;
+  } */
+
+  .acc-qtn {
+    padding: 8px;
+    color: rgb(135, 7, 155);
+    box-shadow: 2px 2px 4px gray;
+    border-radius: 8px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .acc-ans {
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+  }
+}
