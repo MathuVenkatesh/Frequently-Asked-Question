@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("img.jpeg") no-repeat center center/ cover fixed;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  text-align: center;
+  color: red;
+  font-size: 40px;
+  font-weight: 800;
+
+  background: linear-gradient(
+    to top,
+
+    rgb(224, 207, 207),
+    red,
+    red,
+    green,
+    gray,
+    red,
+    black
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.accordion {
+  background-color: white;
+  width: 70%;
+  margin: auto;
+  padding: 18px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 5px 10px rgb(139, 107, 139);
+}
+
+.acc-ans {
+  margin: 18px;
+  padding-left: 8px;
+  line-height: 1.5;
+  cursor: pointer;
+  height: 0;
+  overflow: hidden;
+}
+
+.acc-ans.active {
+  height: auto;
+  padding: 10px;
+}
+.acc-qtn {
+  background-color: rgb(231, 219, 233);
+  padding: 8px 0px 8px 8px;
+  color: rgb(135, 7, 155);
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 8px;
+  margin: 18px;
+  font-weight: bold;
+}
+
+.acc-qtn::after {
+  content: "+";
+  float: right;
+  padding-right: 18px;
+  font-weight: bold;
+}
+
+.acc-qtn.active::after {
+  content: "-";
+  float: right;
+  padding-right: 18px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 535px) {
+  .container {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-30%);
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .accordion {
+    font-size: 18px;
+    width: 80%;
+  }
+  .acc-qtn::after {
+    padding-right: 8px;
+  }
+
+  .acc-qtn {
+    padding: 8px;
+    color: rgb(135, 7, 155);
+    box-shadow: 2px 2px 4px gray;
+    border-radius: 8px;
+    margin: 0px;
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+    font-weight: bold;
+  }
+
+  .acc-ans {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+  }
+}
